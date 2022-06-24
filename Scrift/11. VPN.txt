@@ -1,0 +1,6 @@
+VPN security support different connectivity
+1. side to side
+2. remote access
+
+MPLS switch type device hardware compalibility
+ Layer 2.5 

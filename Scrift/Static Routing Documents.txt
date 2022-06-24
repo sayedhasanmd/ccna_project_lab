@@ -1,0 +1,4 @@
+Connentivity =Point to Point IP assign
+Creating the reachability manually over the network.
+
+ip route destination network subment mask net hope gateway

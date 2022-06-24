@@ -1,0 +1,13 @@
+ip dhcp excluded-address 192.168.1.1 192.168.1.99
+
+ip dhcp pool sayed
+ network 192.168.1.0 255.255.255.0
+ default-router 192.168.1.1
+ dns-server 8.8.8.8
+
+ip dhcp excluded-address 192.168.3.1 192.168.3.99
+
+ip dhcp pool sayed
+ network 192.168.3.0 255.255.255.0
+ default-router 192.168.3.1
+ dns-server 2.2.2.2

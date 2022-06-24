@@ -1,0 +1,23 @@
+interface Tunnel111
+ ip address 10.10.10.1 255.255.255.248
+ mtu 1476
+ tunnel source GigabitEthernet0/0
+ tunnel destination 20.20.20.6
+
+static routing over the tunnel ip 
+ip route 192.168.3.0 255.255.255.0 10.10.10.2
+
+or we can setup an routing protocol
+router ospf 100
+ network 10.10.10.0 0.0.0.7 area 0
+ network 192.168.3.0 0.0.0.255 area 0
+
+
+
+interface Tunnel111
+ ip address 10.10.10.2 255.255.255.248
+ mtu 1476
+ tunnel source GigabitEthernet0/0
+ tunnel destination 20.20.20.2
+
+///ip route 192.168.1.0 255.255.255.0 10.10.10.1

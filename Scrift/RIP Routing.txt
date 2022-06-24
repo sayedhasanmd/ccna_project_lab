@@ -1,0 +1,26 @@
+Small routing Network
+max hope 15 hope count distance vector diye
+distance vector routing protocol
+hope count protocol Bellman Ford
+Adminestrative distance 120
+
+two version
+RIP V1
+RIP V2  (Subnetting VLSM)
+both IPv4 and IPv6
+1-65535 wellknown port 1-1024 port
+port: 520 UTP
+Authentication: md5 or plan text
+Multicast Address: 224.0.0.9 
+Hello message er maddhome send recieve kore
+
+split horizontal:
+============
+ Loop avoidancy . jodi kno network 
+akta link diye receive kore tahole same network diye ar send korbe na
+
+
+Route poisioning; unreacheable and update with infinite matrix kore 
+dei calculation a er mane seta ar kno dik diye brioadcast hobe na 
+Routing ,matrix jodi 60 hoye jai unreachable hole and remove kroe dibe
+

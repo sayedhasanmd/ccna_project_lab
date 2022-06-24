@@ -1,0 +1,34 @@
+
+ISP Router
+router bgp 111
+neighbor 56.56.56.6 remote-as 200
+
+sh ip bgp summary
+
+
+Remote IIG router
+router bgp 200
+neighbor 56.56.56.5 remote-as 111
+neighbor 56.56.56.5 default-originate 
+
+
+/// IIG theke ISP default route cheye nei , 
+onek gula route hoye jai tai 
+
+=========R1=============
+router bgp 111
+neighbor 2.2.2.2 remote-as 111 
+neighbor 2.2.2.2 update-source loopback 111
+
+==========R2========
+router bgp 111
+neighbor 1.1.1.1 remote-as 111
+neighbor 1.1.1.1 update-source loopback 222
+
+
+
+router bgp 111
+ bgp log-neighbor-changes
+ redistribute connected
+ neighbor 2.2.2.2 remote-as 111
+ neighbor 2.2.2.2 update-source Loopback111

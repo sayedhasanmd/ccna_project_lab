@@ -1,0 +1,21 @@
+router ospf 110
+network 12.12.12.0 0.0.0.7 area 0
+network 23.23.23.0 0.0.0.7 area 0
+network 24.24.24.0 0.0.0.7 area 0
+
+ip os network point-to-point 
+
+router ospf 110
+network 56.56.56.0 0.0.0.7 area 0
+network 35.35.35.0 0.0.0.7 area 0
+
+interface Tunnel101
+ description GRE_TUNNEL_WITH_BRAMCH
+ ip address 10.10.10.1 255.255.255.252
+ tunnel source 20.20.20.2
+ tunnel destination 20.20.20.6
+
+ip route 0.0.0.0 0.0.0.0 20.20.20.5
+
+access-list 110 permit ip 192.168.3.0 0.0.0.255 any
+access-list 110 permit ip 192.168.4.0 0.0.0.255 any

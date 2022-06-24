@@ -1,0 +1,41 @@
+ip route 192.168.3.0 255.255.255.0 10.10.10.2
+
+crypto isakmp policy 111
+ encr 3des
+ hash sha256
+ authentication pre-share
+ group 5
+
+crypto isakmp key cisco address 20.20.20.2 
+
+crypto ipsec transform-set Cust_1_To_Cust_B esp-3des esp-md5-hmac
+
+crypto map IPSEC_MAP 111 ipsec-isakmp
+ set peer 20.20.20.6
+ set transform-set Cust_1_To_Cust_B
+ match address 111 
+
+int fastEthernet 0/0
+crypto map IPSEC_MAP
+
+
+crypto isakmp policy 111
+ encr 3des
+ hash sha256
+ authentication pre-share
+ group 5
+
+crypto isakmp key cisco address 20.20.20.1
+
+crypto ipsec transform-set Cust_1_To_Cust_B esp-3des esp-md5-hmac
+
+crypto map IPSEC_MAP 111 ipsec-isakmp
+ set peer 20.20.20.2
+ set transform-set Cust_1_To_Cust_B
+ match address 111 
+
+int fastEthernet 0/0
+ no crypto map IPSEC_MAP
+
+
+access-list 111 permit gre host 10.10.10.2 host 10.10.10.1
